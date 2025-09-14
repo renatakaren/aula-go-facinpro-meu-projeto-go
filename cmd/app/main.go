@@ -6,8 +6,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/seu-usuario/meu-projeto-go/internal/fibonacci"
 	"github.com/seu-usuario/meu-projeto-go/internal/hello"
+	"github.com/seu-usuario/meu-projeto-go/internal/fibonacci"
 )
 
 // Função principal do programa
@@ -17,17 +17,12 @@ func main() {
 
 	// Chamada para função de saudação
 	hello.SayHello()
-
-	// Demonstração: cálculo do 10º número de Fibonacci
+	
 	n := 10
-	// Chama a função Fibonacci do pacote fibonacci
-	// fibonacci // importado acima
-	// Fibonacci(n) // retorna o n-ésimo número da sequência
-	// := é usado para declarar e inicializar a variável
-	valor := fibonacci.Fibonacci(n)
-	// Imprime o resultado com formatação
-	fmt.Printf("F(%d) = %d\n", n, valor)
+	seq := fibonacci.Fibonacci(n)
+	ultimo := seq[len(seq)-1]
 
-	// Demonstração: imprimir a sequência completa até n
-	fibonacci.PrintSequence(n)
+	fmt.Printf("F(%d) = %d\n", n, ultimo)
+	fmt.Printf("Sequência de Fibonacci até F(%d): %v\n", n, seq)
 }
+
